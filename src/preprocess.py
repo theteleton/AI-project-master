@@ -68,14 +68,14 @@ def preprocess(path):
                     edges_w2w[1].append(dict[nword])
     
     embednp = np.array(embedds)
-    w2wedges = edges_w2w.numpy()
-    w2dedges = edges_w2d.numpy()
+    w2wedges = np.array(edges_w2w)
+    w2dedges = np.array(edges_w2d)
     labelsnp = np.array(labels)
 
-    np.savetxt(embednp, "./models/embeddings.txt")
-    np.savetxt(w2wedges, "./models/w2w.txt")
-    np.savetxt(w2dedges, "./models/w2d.txt")
-    np.savetxt(labelsnp, "./models/labels.txt")
+    np.savetxt(embednp, "./data/embeddings.txt")
+    np.savetxt(w2wedges, "./data/w2w.txt")
+    np.savetxt(w2dedges, "./data/w2d.txt")
+    np.savetxt(labelsnp, "./data/labels.txt")
 
     docs = int(len(df))
     print(words)
@@ -85,6 +85,3 @@ def preprocess(path):
                     
 
                 
-
-    listnp = np.array(embedds)
-    np.savetxt(listnp, "./models/word2vec.txt")
